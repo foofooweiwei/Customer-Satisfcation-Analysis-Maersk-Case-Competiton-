@@ -1,0 +1,219 @@
+---
+title: "R_Ttest"
+output: html_document
+date: "2023-07-24"
+---
+
+This is a T_test
+
+#1 Inflight wifi service 
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+
+#install.packages("lsr)
+library(lsr)
+
+df <- read.csv("Airline Passenger Satisfaction.csv")
+
+s <- df %>% filter(Satisfaction_Deconstructed == "satisfied") 
+d <- df %>% filter(Satisfaction_Deconstructed == "dissatisfied")
+
+d_y <- d$Inflight.wifi.service
+S_x <- s$Inflight.wifi.service
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+
+#2 Departure/Arrival time convenient
+```{r}
+d_y <- d$Departure.Arrival.time.convenient
+S_x <- s$Departure.Arrival.time.convenient
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+#3 Ease of Online booking
+```{r}
+d_y <- d$Ease.of.Online.booking
+S_x <- s$Ease.of.Online.booking
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+#4 Gate location
+```{r}
+d_y <- d$Gate.location
+S_x <- s$Gate.location
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+
+#5 Food an drink
+```{r}
+d_y <- d$Food.and.drink
+S_x <- s$Food.and.drink
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+#6 Online boarding
+```{r}
+d_y <- d$Online.boarding
+S_x <- s$Online.boarding
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+#7 Seat Comfort
+```{r}
+d_y <- d$Seat.comfort
+S_x <- s$Seat.comfort
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+```
+#8 Inflight entertainment
+```{r}
+d_y <- d$Inflight.entertainment
+S_x <- s$Inflight.entertainment
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+
+#9 On-board
+```{r}
+d_y <- d$On.board.service
+S_x <- s$On.board.service
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+#install.packages("rstatix")
+#library(rstatix)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+#10 Leg room
+```{r}
+d_y <- d$Leg.room.service
+S_x <- s$Leg.room.service
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+
+```
+
+#11 Baggage hanling
+```{r}
+d_y <- d$Baggage.handling
+S_x <- s$Baggage.handling
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+#12 Checkin
+```{r}
+d_y <- d$Checkin.service
+S_x <- s$Checkin.service
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#13 Inflight_service
+```{r}
+d_y <- d$Inflight.service
+S_x <- s$Inflight.service
+
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#14 Cleaniness
+```{r}
+d_y <- d$Cleanliness
+S_x <- s$Cleanliness
+
+t.test(S_x,d_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+
+#install.packages("lsr")
+#library(lsr)
+cohensD(S_x,n_y,method="unequal")
+```

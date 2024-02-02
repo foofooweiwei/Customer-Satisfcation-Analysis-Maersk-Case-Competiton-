@@ -1,0 +1,205 @@
+---
+title: "R_Ttest"
+output: html_document
+date: "2023-07-24"
+---
+
+This is a T_test
+
+#1 Inflight wifi service 
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+
+#install.packages("lsr)
+library(lsr)
+
+df <- read.csv("Airline Passenger Satisfaction.csv")
+
+
+s <- df %>% filter(satisfaction == "satisfied") 
+n <- df %>% filter(satisfaction == "neutral or dissatisfied")
+
+n_y <- n$Inflight.wifi.service
+S_x <- s$Inflight.wifi.service
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.99)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+
+#2 Departure/Arrival time convenient
+```{r}
+n_y <- n$Departure.Arrival.time.convenient
+S_x <- s$Departure.Arrival.time.convenient
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+#3 Ease of Online booking
+```{r}
+n_y <- n$Ease.of.Online.booking
+S_x <- s$Ease.of.Online.booking
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+#4 Gate location
+```{r}
+n_y <- n$Gate.location
+S_x <- s$Gate.location
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+
+cohensD(S_x,n_y,method="unequal")
+```
+
+
+#5 Food an drink
+```{r}
+n_y <- n$Food.and.drink
+S_x <- s$Food.and.drink
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#6Online boarding
+```{r}
+n_y <- n$Online.boarding
+S_x <- s$Online.boarding
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#7 Seat Comfort
+```{r}
+n_y <- n$Seat.comfort
+S_x <- s$Seat.comfort
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#8 Inflight entertainment
+```{r}
+n_y <- n$Inflight.entertainment
+S_x <- s$Inflight.entertainment
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
+
+
+#9 On-board
+```{r}
+n_y <- n$On.board.service
+S_x <- s$On.board.service
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#10 Leg room
+```{r}
+n_y <- n$Leg.room.service
+S_x <- s$Leg.room.service
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.9)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#11 Baggage hanling
+```{r}
+n_y <- n$Baggage.handling
+S_x <- s$Baggage.handling
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#12 Checkin
+```{r}
+n_y <- n$Checkin.service
+S_x <- s$Checkin.service
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#13 Inflight_service
+```{r}
+n_y <- n$Inflight.service
+S_x <- s$Inflight.service
+
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
+
+#14 Cleaniness
+```{r}
+n_y <- n$Cleanliness
+S_x <- s$Cleanliness
+
+t.test(S_x,n_y,
+      alternative = c("two.sided"),
+      mu = 0, paired = FALSE, var.equal = FALSE,
+      conf.level = 0.95)
+cohensD(S_x,n_y,method="unequal")
+```
